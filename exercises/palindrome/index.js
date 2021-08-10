@@ -14,8 +14,14 @@
 //     return false
 //   }
 // }
+// function palindrome(str){
+//   const newStr = str.split('').reduce((reversed, character)=> reversed = character + reversed, '')
+//   if(newStr === str) {return true} else{return false}
+// }
+
+
 function palindrome(str){
-  const newStr = str.split('').reduce((reversed, character)=> reversed = character + reversed, '')
-  if(newStr === str) {return true} else{return false}
+  const reversed = str.split('').reverse().join('')
+  return str === reversed;
 }
 module.exports = palindrome;
