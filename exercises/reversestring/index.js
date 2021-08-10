@@ -11,11 +11,18 @@
 //   return newstr;
 // }
 
+// function reverse(str){
+//   let reversed ='';
+//   for (let i of str){
+//     reversed = i + reversed
+//   }
+//   return reversed
+// }
+
 function reverse(str){
-  let reversed ='';
-  for (let i of str){
-    reversed = i + reversed
-  }
-  return reversed
+  return arr = str.split('').reduce((reversed, character)=>{
+   return character + reversed
+ }, '')
 }
+
 module.exports = reverse;
