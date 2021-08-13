@@ -26,11 +26,14 @@ function chunk(array, size) {
   // create empty chuncked array
   const chuncked =[];
   //create index start at 0
-
+  let index = 0;
   //while index is less than array.length
-
-  //push a slice of length 'size' from 'array' into 'chuncked'
-
-  //add 'size' to 'index'
+ while (index < array.length){
+   //push a slice of length 'size' from 'array' into 'chuncked'
+   chuncked.push(array.slice(index, index + size));
+   //add 'size' to 'index'
+   index += size
+ }
+ return chuncked
 }
 module.exports = chunk;
