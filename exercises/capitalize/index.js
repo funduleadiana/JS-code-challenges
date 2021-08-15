@@ -11,17 +11,16 @@ function capitalize(str) {
   //make an empty array
   const words = [];
   //split the input string by spaces
-  const array = str.split(' ')
+  
   //for each word in the array 
-
-
+for (let word of str.split(' ')){
   //uppercase the first letter of each word
-
   //join first letter with rest of the string
-
-  //push result into words array
-
-  //join 'words into a string and return
+  words.push(word[0].toUpperCase() + word.slice(1))
+}
+//push result into words array
+//join 'words into a string and return
+ return words.join(' ') 
 
 }
 
