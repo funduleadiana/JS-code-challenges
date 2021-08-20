@@ -17,8 +17,49 @@
 
 function matrix(n) {
   let results = [];
+  for (let i=0; i< n; i++){
+    //adding subarrays to main arr
+    results.push([]);
+  }
+
   let counter = 1;
-  //as long as (start column<= end columne) and ( start row <= end row)
+  let startColumn = 0;
+  let endColumn = n-1;
+  let startRow = 0;
+  let endRow = n-1;
+  while(startColumn <= endColumn && startRow <= endRow){
+    //Top row
+    for(let i = startColumn; i<= endColumn; i++){
+      results[startRow][i]=counter;
+      counter ++;
+    }
+    startRow++;
+
+    //Right column 
+    for (let i =startRow; i<= endRow; i++){
+      results[i][endColumn] = counter;
+      counter ++;
+    }
+    //moving to middle column
+    endColumn --;
+    
+    //bottom row
+
+    for(let i=endColumn; i>= startColumn; i--){
+      results[endRow][i] = counter;
+      counter ++;
+    }
+    endRow --;
+
+    //startColumn 
+    for(let i= endRow; i>= startRow; i--){
+      results[i][startColumn] = counter;
+      counter++;
+    }
+    startColumn++
+  }
+  return results;
+  //as long as (start column<= end column) and ( start row <= end row)
   //loop from start column to end column
   //at results[start_row][i] assign counter variable
   //increment counter
