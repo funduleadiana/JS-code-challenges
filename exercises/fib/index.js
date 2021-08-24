@@ -8,18 +8,34 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {
+///improving performance with memoization
+function memoize(fn){
+
+  //data store - cache object
+  const cache = {};
+//anonymous function with an undefined no of args
+  return function(...args){
+    if(cache[args]){
+      return cache[args];
+    }
+    //storing the results of calling slowFib with a number that has not been called before
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    return result; 
+  };
+}
+
+//slowFib can be called fib as this not change the result
+function slowFib(n) {
   //using recursion
-
   if(n < 2){
-
     return n;
   }
-
+  //this is not a reference to initial fib function but a reference to the memoized fn
   return fib(n-1) + fib(n-2)
-
-
 }
+
+const fib = memoize(slowFib);
 
 module.exports = fib;
 
