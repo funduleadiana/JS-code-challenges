@@ -10,6 +10,21 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
-class Stack {}
+//The stack is different from the queue becuase where the queue follows a first in first out rule the stack has a first in last out rule hence push and pop
+class Stack {
+  constructor(){
+    this.data = [];
+  }
+  //first in last out 
+  push(record){
+    this.data.push(record);
+  }
+  pop(){
+    return this.data.pop();
+  }
+  peek(){
+    return this.data[this.data.length - 1];
+  }
+}
 
 module.exports = Stack;
