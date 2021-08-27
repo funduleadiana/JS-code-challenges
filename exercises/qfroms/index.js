@@ -16,6 +16,7 @@ const Stack = require('./stack');
 
 class Queue {
   constructor(){
+    //instead of setting up the empty array we set up 2 empty stacks
     this.first = new Stack;
     this.second = new Stack;
   }
