@@ -24,6 +24,7 @@ class LinkedList {
       counter++;
       node = node.next;
     }
+    return counter;
   }
 }
 // real usage of the linkedList
