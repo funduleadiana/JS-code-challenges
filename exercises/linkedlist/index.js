@@ -41,7 +41,9 @@ class LinkedList {
       }
       node = node.next; 
     }
-    
+  }
+  clear(){
+    this.head = null;
   }
 }
 // real usage of the linkedList
