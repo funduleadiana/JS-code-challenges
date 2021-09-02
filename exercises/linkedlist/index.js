@@ -26,6 +26,9 @@ class LinkedList {
     }
     return counter;
   }
+  getFirst(){
+    return this.head; 
+  }
 }
 // real usage of the linkedList
 // const list = new LinkedList();
