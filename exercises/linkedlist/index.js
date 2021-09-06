@@ -78,8 +78,19 @@ class LinkedList {
     }else{
       this.head = new Node(data); 
     }
+  }
+  getAt(index){
     
-
+    let counter;
+    let node = this.head;
+    while (node) {
+      if(counter === index){
+        return node;
+      }
+      counter++; 
+      node =  node.next;
+    }
+    return null; 
   }
 }
 // real usage of the linkedList
