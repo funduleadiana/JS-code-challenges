@@ -70,6 +70,17 @@ class LinkedList {
     previous.next = null;
     
   }
+  insertLast(data){
+    const node = this.getLast();
+
+    if(node){
+      node.next = new Node(data)
+    }else{
+      this.head = new Node(data); 
+    }
+    
+
+  }
 }
 // real usage of the linkedList
 // const list = new LinkedList();
