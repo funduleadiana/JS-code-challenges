@@ -113,6 +113,25 @@ class LinkedList {
 
 
   }
+  insertAt(data, index){
+    //when the list is empty insert new node at the 0 index
+    if(!this.head){
+      this.head = new Node(data);
+      return;
+    }
+    //if we already have a node inside the list and we are trying to insert at index of 0
+    if(index === 0){
+      this.head = new Node(data, this.head);
+      return;
+    }
+
+    //find the previous element the one before where we want to insert
+    const previous = this.getAt(index - 1) || this.getLast() //in case the index is out of bounds previous will be the last node;
+  
+    const node = new Node(data, previous.next);
+    previous.next = node;
+
+  }
 }
 // real usage of the linkedList
 // const list = new LinkedList();
