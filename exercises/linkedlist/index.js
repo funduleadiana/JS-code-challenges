@@ -92,6 +92,27 @@ class LinkedList {
     }
     return null; 
   }
+
+  removeAt(index){
+    if(!this.head){
+      return;
+    }
+    //if the index is 0 it returns the node at index 1 as the first node
+    if(index === 0){
+      this.head = this.head.next;
+      return;
+    }
+
+    //reusing getAt to attempt to find the previous node
+    const previous = this.getAt(index - 1);
+    //asking for an index that was out of the bounds of our linked list
+    if(!previous || !previous.next){
+      return;
+    }
+    previous.next = previous.next.next;
+
+
+  }
 }
 // real usage of the linkedList
 // const list = new LinkedList();
