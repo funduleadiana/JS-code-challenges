@@ -11,6 +11,13 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+  //size - n => getAt(on the result )
+      //if n = 0 => 0 spaces from the last element is the last element
+      //slow/fast strategy 
+      //initialise as this.head; fast will move to the position indicated by the integer n 
+      //is fast pointing at the last elemn in the list if no move forward
+      //is it pointing at the last elemn if yes slow must be n elements behind it
+}
 
 module.exports = fromLast;
